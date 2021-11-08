@@ -5,7 +5,6 @@ public class MatrixTester {
         int rows = 3;
         int cols = 3;
         Matrix mat = new Matrix(rows, cols);
-
-
+        ooga booga;
     }
 }
