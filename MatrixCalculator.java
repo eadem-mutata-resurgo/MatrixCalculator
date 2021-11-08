@@ -7,7 +7,7 @@ public class MatrixCalculator {
         else if (size == 2) {
             return ((mat.getElement(0,0) * mat.getElement(1,1)) - (mat.getElement(0, 1) * mat.getElement(1, 0)));
         }
-        Double det = 0.0;
+        double det = 0.0;
         double[] firstRow = mat.getRow(0);
         for (int i = 0; i < mat.getNumColumns(); i++) {
             det += (Math.pow(-1, i) * firstRow[i] * determinant(subMatrix(mat,0, i)));
