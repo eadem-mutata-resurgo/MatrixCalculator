@@ -91,4 +91,24 @@ public class MatrixCalculator {
             mat.setElement(mat.getElement(targetRowIndex, i) + (mat.getElement(sourceRowIndex, i) * scalar), targetRowIndex, i);
         }
     }
+
+    //returns the product of two matrices
+    public static Matrix multiply(Matrix leftMat, Matrix rightMat) {
+        int productSize = leftMat.getNumColumns();
+        if (productSize != rightMat.getNumRows()) { return null; }
+        int outRows = leftMat.getNumRows();
+        int outCols = rightMat.getNumColumns();
+        Matrix outMat = new Matrix(outRows, outCols);
+        double product;
+        for (int i = 0; i < outRows; i++) {
+            for (int j = 0; j < outCols; j++) {
+                product = 0;
+                for (int k = 0; k < productSize; k++) {
+                    product += leftMat.getElement(i, k) * rightMat.getElement(k,j);
+                }
+                outMat.setElement(product, i, j);
+            }
+        }
+        return outMat;
+    }
 }
